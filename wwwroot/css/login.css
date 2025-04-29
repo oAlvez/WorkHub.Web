@@ -1,0 +1,89 @@
+﻿* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Poppins, 'Segoe UI', sans-serif;
+}
+body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rebeccapurple;
+    
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    background-color: whitesmoke;
+    border-radius: 1.5rem;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.congrats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+    .button {
+        border: none;
+        border-radius: 0.5rem;
+        width: 90%;
+        height: 2rem;
+        background-color: rebeccapurple;
+        color: white;
+        cursor: pointer;
+    }
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+
+    .form-group input{
+        border: 0.5px solid #c1c1c1;
+        border-radius: 0.5rem;
+        width: 100%;
+        height: 2rem;
+        padding: 0.5rem;
+    }
+
+.title {
+    font-size: 20pt;
+    font-weight: bolder;
+    color: rebeccapurple;
+}
+
+.subtitle {
+    font-size: 10pt;
+    font-weight: normal;
+}
+
+.link {
+    font-size: 10pt;
+    font-weight: normal;
+}
+.link a{
+    font-size: 10pt;
+    font-weight: 600;
+    color:rebeccapurple;
+    cursor: pointer;
+}
