@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 
 namespace WorkHub.Web.Models.Authentication;
-public class LoginRequest
+public class AuthenticationRequest
 {
     [Description("Email")]
     public string Username { get; set; } = string.Empty;

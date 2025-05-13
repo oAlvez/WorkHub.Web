@@ -4,5 +4,5 @@ namespace WorkHub.Web.Services.Interfaces;
 
 public interface IAuthenticationService
 {
-    Task<LoginResponse> LoginAsync(LoginRequest request);
+    Task<AuthenticationResponse?> LoginAsync(AuthenticationRequest request);
 }

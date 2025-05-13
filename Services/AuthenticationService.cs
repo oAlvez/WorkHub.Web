@@ -1,24 +1,10 @@
 ﻿using WorkHub.Web.Models.Authentication;
 using WorkHub.Web.Services.Interfaces;
+using WorkHub.Web.Services.Interfaces.Base;
 
 namespace WorkHub.Web.Services;
-
-public class AuthenticationService : IAuthenticationService
+public class AuthenticationService(IHttpService _httpService) : IAuthenticationService
 {
-    private readonly HttpClient _httpClient;
-
-    public AuthenticationService(HttpClient httpClient)
-    {
-        _httpClient = httpClient;
-    }
-
-    public async Task<LoginResponse> LoginAsync(LoginRequest request)
-    {
-        var response = await _httpClient.PostAsJsonAsync("https://workhubflow.com.br:2053/api/Authentication", request);
-
-        if (!response.IsSuccessStatusCode)
-            throw new ApplicationException("Login inválido.");
-
-        return (await response.Content.ReadFromJsonAsync<LoginResponse>())!;
-    }
+    public async Task<AuthenticationResponse?> LoginAsync(AuthenticationRequest request) => 
+        await _httpService.PostAsync<AuthenticationResponse>("Authentication", request);
 }

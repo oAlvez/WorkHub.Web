@@ -6,10 +6,13 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddOptionsConfiguration(builder.Configuration);
 builder.Services.AddServicesConfiguration();
+builder.Services.AddSessionConfiguration();
 builder.Services.AddMemoryCache();
 builder.Services.AddHealthChecks();
 
 var app = builder.Build();
+
+app.UseSession();
 
 if (!app.Environment.IsDevelopment())
 {

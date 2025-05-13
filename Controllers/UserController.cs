@@ -14,11 +14,11 @@ public class UserController(IUserService _userService) : Controller
         if (!ModelState.IsValid)
             return View(model);
 
-        var success = await _userService.CreateUserAsync(model);
+        var response = await _userService.CreateUserAsync(model);
 
-        if (success)
+        if (response?.Success is true)
         {
-            TempData["Success"] = "Usuário cadastrado com sucesso!";
+            TempData["Success"] = response.Message;
             return RedirectToAction("Create");
         }
 

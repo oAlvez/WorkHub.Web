@@ -1,14 +1,10 @@
 ﻿using WorkHub.Web.Models.User;
 using WorkHub.Web.Services.Interfaces;
+using WorkHub.Web.Services.Interfaces.Base;
 
 namespace WorkHub.Web.Services;
-
-public class UserService(HttpClient _httpClient) : IUserService
+public class UserService(IHttpService _httpService) : IUserService
 {
-    public async Task<bool> CreateUserAsync(CreateUserRequest model)
-    {
-        var response = await _httpClient.PostAsJsonAsync("https://workhubflow.com.br:2053/api/User", model);
-
-        return response.IsSuccessStatusCode;
-    }
+    public async Task<CreateUserResponse?> CreateUserAsync(CreateUserRequest model) => 
+        await _httpService.PostAsync<CreateUserResponse>("User", model);
 }
